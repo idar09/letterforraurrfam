@@ -131,3 +131,31 @@ body {
     width: 110px;
   }
 }
+
+.slide {
+  display: none;
+}
+
+.slide.active {
+  display: block;
+}
+
+.slide-nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 25px;
+}
+
+video {
+  display: block;
+  width: 100%;
+  max-height: 420px;
+}
+
+.signature-section {
+  text-align: center;
+  margin-top: 25px;
+}
+  
