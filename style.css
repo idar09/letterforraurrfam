@@ -10,10 +10,6 @@ body {
   background: #1e1e2f;
   color: #fff;
   min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
   padding: 24px 12px;
 }
 
@@ -21,12 +17,14 @@ body {
   text-align: center;
   font-size: 1.4rem;
   line-height: 1.7;
-  margin-bottom: 30px;
+  margin: 60px auto 30px;
   max-width: 600px;
-  animation: fadeIn 1.2s ease;
+  animation: fadeIn 1s ease;
 }
 
 .btn {
+  display: block;
+  margin: 0 auto;
   padding: 12px 26px;
   font-size: 1rem;
   background: #f5eeef;
@@ -34,12 +32,10 @@ body {
   border-radius: 24px;
   cursor: pointer;
   color: #1e1e2f;
-  transition: 0.3s;
 }
 
 .btn:hover {
   background: #d8c4ca;
-  transform: scale(1.05);
 }
 
 .letter {
@@ -52,26 +48,21 @@ body {
     #d2d2d2 32px
   );
   color: #333;
-  padding: 30px 24px 100px 48px;
+  padding: 30px 24px 40px 48px;
   border-radius: 10px;
   width: 100%;
-  max-width: 600px;
-  height: min(75vh, 650px);
+  max-width: 700px;
+  height: 75vh;
   min-height: 300px;
+  margin: 25px auto;
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
   font-size: 1rem;
-  line-height: 2;
+  line-height: 1.8;
   text-align: left;
   font-family: "Courier New", monospace;
-  white-space: pre-wrap;
-  overflow-wrap: anywhere;
   overflow-y: auto;
-  animation: fadeIn 0.8s ease;
-}
-
-.letter p {
-  margin: 0;
-  min-height: 100%;
+  overflow-x: hidden;
+  overflow-wrap: anywhere;
 }
 
 .letter::before {
@@ -92,16 +83,96 @@ body {
   pointer-events: none;
 }
 
-.signature {
-  position: sticky;
+/* INI BAGIAN PENTING UNTUK MENCEGAH SLIDE NUMPUK */
+.slide {
+  display: none;
+  width: 100%;
+}
+
+.slide.active {
   display: block;
+}
+
+.slide h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.slide h3 {
+  margin: 20px 0;
+}
+
+.slide p {
+  margin: 16px 0;
+  min-height: 0;
+  white-space: pre-wrap;
+}
+
+/* Teks surat */
+#typedText {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  line-height: 1.9;
+}
+
+/* Tombol navigasi */
+.slide-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.slide-nav button {
+  padding: 11px 20px;
+  border: none;
+  border-radius: 22px;
+  background: #d65b85;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.slide-nav button:hover {
+  background: #b9436c;
+}
+
+.slide-nav .secondary {
+  background: #82717b;
+}
+
+/* Video kenangan */
+.slide video {
+  display: block;
+  width: 100%;
+  max-height: 400px;
+  margin: 20px auto;
+  border-radius: 10px;
+  background: #1e1e2f;
+}
+
+/* Tanda tangan */
+.signature-section {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.signature {
+  display: block;
+  position: static;
   width: 140px;
-  max-width: 45%;
+  max-width: 70%;
   height: auto;
-  margin: 24px 0 0 auto;
+  margin: 15px auto;
   opacity: 0.9;
-  pointer-events: none;
   transform: rotate(-2deg);
+}
+
+.signature-name {
+  text-align: center;
 }
 
 @keyframes fadeIn {
@@ -109,6 +180,7 @@ body {
     opacity: 0;
     transform: translateY(10px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -118,12 +190,12 @@ body {
 @media (max-width: 480px) {
   .intro {
     font-size: 1.15rem;
+    margin-top: 35px;
   }
 
   .letter {
-    padding: 22px 14px 70px 36px;
+    padding: 22px 14px 30px 36px;
     font-size: 0.88rem;
-    line-height: 2;
     height: 78vh;
   }
 
@@ -131,31 +203,3 @@ body {
     width: 110px;
   }
 }
-
-.slide {
-  display: none;
-}
-
-.slide.active {
-  display: block;
-}
-
-.slide-nav {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 25px;
-}
-
-video {
-  display: block;
-  width: 100%;
-  max-height: 420px;
-}
-
-.signature-section {
-  text-align: center;
-  margin-top: 25px;
-}
-  
